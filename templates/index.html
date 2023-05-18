@@ -7,34 +7,35 @@
     <h1>Arbitrage Opportunities</h1>
 
     <h2>Positive Opportunities</h2>
-    {% for item in data if item.arbitrage > 0 %}
     <div>
-        <p>Symbol: {{ item.symbol }}</p>
-        <p>Gate.io Price: {{ item.gateio_price }}</p>
-        <p>MEXC Price: {{ item.mexc_price }}</p>
-        <p>Gate.io Link: <a href="{{ item.gateio_link }}">{{ item.gateio_link }}</a></p>
-        <p>MEXC Link: <a href="{{ item.mexc_link }}">{{ item.mexc_link }}</a></p>
-        <p>Arbitrage: {{ item.arbitrage }}%</p>
+        {% for item in data if item['arbitrage'] > 0 %}
+        <p>Symbol: {{ item['symbol'] }}</p>
+        <p>Gate.io Price: {{ item['gateio_price'] }}</p>
+        <p>MEXC Price: {{ item['mexc_price'] }}</p>
+        <p>Gate.io Link: <a href="{{ item['gateio_link'] }}">{{ item['gateio_link'] }}</a></p>
+        <p>MEXC Link: <a href="{{ item['mexc_link'] }}">{{ item['mexc_link'] }}</a></p>
+        <p>Arbitrage: {{ item['arbitrage'] }}%</p>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     <h2>Negative Opportunities</h2>
-    {% for item in data if item.arbitrage < 0 %}
     <div>
-        <p>Symbol: {{ item.symbol }}</p>
-        <p>Gate.io Price: {{ item.gateio_price }}</p>
-        <p>MEXC Price: {{ item.mexc_price }}</p>
-        <p>Gate.io Link: <a href="{{ item.gateio_link }}">{{ item.gateio_link }}</a></p>
-        <p>MEXC Link: <a href="{{ item.mexc_link }}">{{ item.mexc_link }}</a></p>
-        <p>Arbitrage: {{ item.arbitrage }}%</p>
+        {% for item in data if item['arbitrage'] < 0 %}
+        <p>Symbol: {{ item['symbol'] }}</p>
+        <p>Gate.io Price: {{ item['gateio_price'] }}</p>
+        <p>MEXC Price: {{ item['mexc_price'] }}</p>
+        <p>Gate.io Link: <a href="{{ item['gateio_link'] }}">{{ item['gateio_link'] }}</a></p>
+        <p>MEXC Link: <a href="{{ item['mexc_link'] }}">{{ item['mexc_link'] }}</a></p>
+        <p>Arbitrage: {{ item['arbitrage'] }}%</p>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     <h2>Summary</h2>
     <p>Total Positive Opportunities: {{ positive_count }}</p>
     <p>Total Negative Opportunities: {{ negative_count }}</p>
 </body>
 </html>
+
 
             
 
