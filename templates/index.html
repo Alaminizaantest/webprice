@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Arbitrage Opportunities</title>
+    <title>Gate.io and MEXC Global Data</title>
 </head>
 <body>
-    <h1>Arbitrage Opportunities</h1>
-    <p>Positive Arbitrage Opportunities: {{ positive_count }}</p>
-    <p>Negative Arbitrage Opportunities: {{ negative_count }}</p>
+    <h1>Gate.io and MEXC Global Data</h1>
+    <h2>Gate.io Data</h2>
     <table>
         <tr>
             <th>Symbol</th>
-            <th>Gate.io Price</th>
-            <th>MEXC Global Price</th>
-            <th>Gate.io Link</th>
-            <th>MEXC Global Link</th>
-            <th>Arbitrage</th>
+            <th>Last Price</th>
         </tr>
-        {% for item in data %}
+        {% for symbol, price in gateio_data.items() %}
         <tr>
-            <td>{{ item.symbol }}</td>
-            <td>{{ item.gateio_price }}</td>
-            <td>{{ item.mexc_price }}</td>
-            <td><a href="{{ item.gateio_link }}" target="_blank">Trade on Gate.io</a></td>
-            <td><a href="{{ item.mexc_link }}" target="_blank">Trade on MEXC Global</a></td>
-            <td>{{ item.arbitrage }}%</td>
+            <td>{{ symbol }}</td>
+            <td>{{ price }}</td>
         </tr>
         {% endfor %}
     </table>
+    <h2>MEXC Global Data</h2>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Last Price</th>
+        </tr>
+        {% for symbol, price in mexc_data.items() %}
+        <tr>
+            <td>{{ symbol }}</td>
+            <td>{{ price }}</td>
+        </tr>
+        {% endfor %}
 </body>
 </html>
+
