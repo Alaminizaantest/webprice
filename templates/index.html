@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Arbitrage Opportunities</title>
+    <title>Gate.io Tickers</title>
 </head>
 <body>
-    <h1>Arbitrage Opportunities</h1>
+    <h1>Gate.io Tickers</h1>
 
-    <h2>Data</h2>
-    {% for item in data %}
+    <h2>Ticker Data</h2>
+    {% for symbol, ticker in gateio_tickers.items() %}
     <div>
-        <p>Symbol: {{ item['symbol'] }}</p>
-        <p>Gate.io Price: {{ item['gateio_price'] }}</p>
-        <p>MEXC Price: {{ item['mexc_price'] }}</p>
-        <p>Arbitrage: {{ item['arbitrage'] }}%</p>
+        <p>Symbol: {{ symbol }}</p>
+        <p>Last Price: {{ ticker['last'] }}</p>
+        <p>High Price: {{ ticker['high'] }}</p>
+        <p>Low Price: {{ ticker['low'] }}</p>
+        <p>Volume: {{ ticker['quoteVolume'] }}</p>
     </div>
     {% endfor %}
 </body>
 </html>
+
 
 
 
