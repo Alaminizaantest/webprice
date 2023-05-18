@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,18 +7,18 @@
     <h1>Arbitrage Opportunities</h1>
 
     <h2>Data</h2>
-    <ul>
-        {% for item in data %}
-        <li>
-            Symbol: {{ item['symbol'] }} |
-            Gate.io Price: {{ item['gateio_price'] }} |
-            MEXC Price: {{ item['mexc_price'] }} |
-            Arbitrage: {{ item['arbitrage'] }}%
-        </li>
-        {% endfor %}
-    </ul>
+    {% for item in data %}
+    <div>
+        <p>Symbol: {{ item['symbol'] }}</p>
+        <p>Gate.io Price: {{ item['gateio_price'] }}</p>
+        <p>MEXC Price: {{ item['mexc_price'] }}</p>
+        <p>Arbitrage: {{ item['arbitrage'] }}%</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
+
+
 
 
 
