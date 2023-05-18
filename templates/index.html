@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exchange Data</title>
+</head>
+<body>
+    <h1>Exchange Data</h1>
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Gate.io Price</th>
+            <th>MEXC Global Price</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.symbol }}</td>
+            <td>{{ item.gateio_price }}</td>
+            <td>{{ item.mexc_price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
