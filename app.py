@@ -54,4 +54,4 @@ def index():
     return render_template('index.html', data=data, positive_count=positive_count, negative_count=negative_count)
 
 if __name__ == '__main__':
-    app.run(true)
+    app.run(True)
